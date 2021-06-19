@@ -15,11 +15,10 @@ conn.request("GET", "/listings?class=residential&sortBy=random&resultsPerPage=10
 
 res = conn.getresponse()
 response = res.read()
-
 data = json.loads(response.decode("utf-8"))
 listings = data['listings']
 
-# print(json.dumps(listings,indent =2))
+listing_df = pd.json_normalize(listings)
 
 def create_connection():
     """ create a database connection to a SQLite database """
@@ -70,7 +69,7 @@ def display_listings(conn):
         print("MLS Number: ", row[0], " Price: ", "$" + str(row[1]))
         print("Address: ", str(row[3]) + " " + row[2] + " " + row[4] + " " + row[6] + " " + row[7])
         print()
-
+'''
 def main():
     conn = create_connection()
     if conn is not None:
@@ -106,4 +105,4 @@ def main():
     display_listings(conn)
 
 if __name__ == '__main__':
-    main()
+    main()'''
