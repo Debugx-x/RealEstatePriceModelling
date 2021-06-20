@@ -1,1 +1,1 @@
-# Real Estate Price Predictive Modelling `Current Project`
+# Price Predictive Modelling `Current Project`
